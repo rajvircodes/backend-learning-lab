@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+// const logger = require("../middlewares/logger.middleware");
 
 const pageRoutes = require("./page.routes");
 const userRoutes = require("./user.routes");
