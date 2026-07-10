@@ -8,6 +8,6 @@ const healthRoutes = require("./health.routes");
 
 router.use("/health", healthRoutes);
 router.use("/", pageRoutes);
-router.use("/", authRoutes);
+router.use("/users", authRoutes);
 
 module.exports = router;
