@@ -1,6 +1,6 @@
 const requestTime = (req, res, next) => {
   console.log(new Date().toISOString());
-  return next();
+  next();   
 };
 
 module.exports = requestTime;

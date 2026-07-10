@@ -1,19 +1,14 @@
 const express = require("express");
 const checkApi = require("../middlewares/apiKey.middleware");
+const {
+  aboutPage,
+  contactPage,
+  protectedPage,
+} = require("../controller/page.controller");
 const router = express.Router();
-checkApi;
-router.get("/", (req, res) => {
-  res.send("Welcome to Backend learning");
-});
 
-router.get("/about", (req, res) => {
-  res.send("Welcome to about page");
-});
+router.get("/about", aboutPage);
 
-router.get("/contact", (req, res) => {
-  res.send("Welcome to contact page");
-});
-router.get("/protected", checkApi, (req, res) => {
-  res.send("Welcome to contact page");
-});
+router.get("/contact", contactPage);
+router.get("/protected", checkApi, protectedPage);
 module.exports = router;

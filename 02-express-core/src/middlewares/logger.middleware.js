@@ -1,9 +1,6 @@
 const logger = (req, res, next) => {
-  const url = req.originalUrl;
-  const method = req.method;
-  console.log(method, url);
-
-  return next();
+  console.log(`[${req.method}] ${req.originalUrl}`);
+  next();
 };
 
 module.exports = logger;
