@@ -1,13 +1,18 @@
+const pageService = require("../services/page.service");
+
 const aboutPage = (req, res) => {
-  res.send("Welcome to about page");
+  const message = pageService.getAboutMessage();
+  res.send(message);
 };
 
 const contactPage = (req, res) => {
-  res.send("Welcome to contact page");
+  const message = pageService.getContactMessage();
+  res.send(message);
 };
 
 const protectedPage = (req, res) => {
-  res.send("Welcome to contact page");
+  const message = pageService.getProtectedMessage();
+  res.send(message);
 };
 
 module.exports = { aboutPage, contactPage, protectedPage };
